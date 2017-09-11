@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 
 public class Shop {
-    String name;
-    ArrayList<Sellable> stock;
+    private String name;
+    private ArrayList<Sellable> stock;
 
     public Shop(String name, ArrayList<Sellable> stock) {
         this.name = name;

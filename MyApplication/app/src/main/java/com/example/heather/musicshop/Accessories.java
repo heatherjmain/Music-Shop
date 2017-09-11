@@ -5,9 +5,9 @@ package com.example.heather.musicshop;
  */
 
 public abstract class Accessories implements Sellable {
-    String accessory;
-    double buyingPrice;
-    double sellingPrice;
+    private String accessory;
+    private double buyingPrice;
+    private double sellingPrice;
 
     //constructor
     public Accessories(String accessory, double buyingPrice, double sellingPrice) {

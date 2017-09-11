@@ -7,7 +7,7 @@ package com.example.heather.musicshop;
  */
 
 public class Guitar extends Instrument {
-    int numberOfStrings;
+    private int numberOfStrings;
 
     //constructor
     public Guitar(

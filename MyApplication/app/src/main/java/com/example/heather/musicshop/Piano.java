@@ -7,7 +7,7 @@ package com.example.heather.musicshop;
  */
 
 public class Piano extends Instrument {
-    int numberOfKeys;
+    private int numberOfKeys;
 
 
     //constructor

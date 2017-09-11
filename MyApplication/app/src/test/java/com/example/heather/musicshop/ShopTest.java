@@ -20,6 +20,7 @@ public class ShopTest {
 
     @Before
     public void before() {
+        shop = new Shop( "Rays Music Exchange", stock );
         stock = new ArrayList<>();
         stock.add(new Guitar("Guitar", 1, "White", "Plastic", 135.00, 199.99, InstrumentType.STRING, 8 ));
         stock.add(new SheetMusic( "Sheet Music", 12.00, 19.99 ));
@@ -28,13 +29,18 @@ public class ShopTest {
     @Test
     public void canGetStock() {
         //arrange
-        shop = new Shop( "Lyricals", stock );
+        shop = new Shop( "Rays Music Exchange", stock );
         //act
         ArrayList<Sellable> result = shop.getStock();
         //assert
         assertEquals( "Guitar", ((Guitar)result.get(0)).getInstrument() );
         assertEquals( "Sheet Music", ((SheetMusic)result.get(1)).getAccessory() );
 
+    }
+
+    @Test
+    public void canGetName() {
+        assertEquals( "Rays Music Exchange", shop.getName() );
     }
 
     @Test
@@ -50,4 +56,6 @@ public class ShopTest {
         shop.removeItemByIndex(0);
         assertEquals( 2, stock.size() );
     }
+
+
 }

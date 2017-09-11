@@ -6,13 +6,13 @@ package com.example.heather.musicshop;
  */
 
 public abstract class Instrument implements Playable, Sellable {
-    String instrument;
-    int quantity;
-    String colour;
-    String material;
-    double buyingPrice;
-    double sellingPrice;
-    InstrumentType type;
+    private String instrument;
+    private int quantity;
+    private String colour;
+    private String material;
+    private double buyingPrice;
+    private double sellingPrice;
+    private InstrumentType type;
 
 
     //constructor

@@ -5,7 +5,7 @@ package com.example.heather.musicshop;
  */
 
 public class Trumpet extends Instrument {
-    int numberOfValves;
+    private int numberOfValves;
 
     //constructor
 
