@@ -8,8 +8,6 @@ public class Trumpet extends Instrument {
     private int numberOfValves;
 
     //constructor
-
-
     public Trumpet(
             String instrument,
             int quantity,

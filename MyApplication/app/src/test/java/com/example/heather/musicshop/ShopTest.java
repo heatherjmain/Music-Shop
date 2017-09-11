@@ -15,6 +15,7 @@ public class ShopTest {
     Shop shop;
     ArrayList<Sellable> stock;
     DrumSticks drumSticks;
+    Guitar guitar;
 
 
 
@@ -45,16 +46,41 @@ public class ShopTest {
 
     @Test
     public void canAddItem() {
+        Shop newShop = new Shop("Test Shop", new ArrayList<Sellable>());
         drumSticks = new DrumSticks( "Drum Sticks", 20.00, 39.99 );
-        shop.addItem(drumSticks);
-        assertEquals( 3, stock.size() );
+
+        ArrayList<Sellable> expectedStock = new ArrayList<>();
+        expectedStock.add(drumSticks);
+
+        newShop.addItem(drumSticks);
+
+        assertEquals( 1, newShop.getStock().size() );
+        assertEquals( expectedStock, newShop.getStock() );
     }
 
     @Test
     public void canRemoveByIndex() {
+        //make a new shop, some drumsticks and a guitar
+        Shop newShop = new Shop("Test Shop", new ArrayList<Sellable>());
         drumSticks = new DrumSticks( "Drum Sticks", 20.00, 39.99 );
-        shop.removeItemByIndex(0);
-        assertEquals( 2, stock.size() );
+        guitar = new Guitar( "Guitar", 1, "White", "Plastic", 135.00, 199.99, InstrumentType.STRING, 8);
+
+        //create a new arraylist to compare to.
+        //This should equate to what is expected by using the method
+        ArrayList<Sellable> expectedStock = new ArrayList<>();
+        expectedStock.add(drumSticks);
+
+        //add items into the stock array using addItem method(tested above)
+        newShop.addItem(guitar);
+        newShop.addItem(drumSticks);
+
+        //remove item from shop by index(method being tested here)
+        newShop.removeItemByIndex(0);
+
+        //assert there is only 1 item in the array as 2 added and 1 removed
+        assertEquals( 1, newShop.getStock().size() );
+        //assert that the test ArrayList matches the test ArrayList
+        assertEquals( expectedStock, newShop.getStock() );
     }
 
 
